@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>register</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		@font-face {
+		  font-family: 'iconfont';
+		  src:url('../css/font/iconfont.ttf');
+		}
+		body {
+			/*height: 3000px;*/
+		}
+		/*导航栏 begin*/
+		.user{
+		  font-family:"iconfont" !important;
+		  font-size:40px;
+		  font-style:normal;
+		}
+		.top {
+			height: 75px;
+			border-bottom: 1px solid #E1E4E8;
+		}
+		.top .top-in {
+			width: 1083px;
+			height: 75px;
+			margin: 0 auto;
+		}
+		.top .top-in .top-in-left {
+			float: left;
+		}
+		.top .top-in .top-in-left a{
+			text-decoration: none;
+			color: #24292E;
+			line-height: 75px;
+			font-family: "Microsoft Yahei";
+			vertical-align: middle;
+			padding-right: 24px;
+		}
+		.top .top-in .top-in-left a:hover {
+			color: #586069;
+		}
+		.top .top-in .top-in-right {
+			float: right;
+			line-height: 75px;
+		}
+		.top .top-in .top-in-right input {
+			width: 220px;
+			height: 35px;
+			border: 1px solid #D1D5DA;
+			outline: none;
+			background-color: #FAFAFA;
+			border-radius: 5px;
+			text-indent: 10px;
+			font-size: 16px;
+			font-family: "Microsoft Yahei";
+		}
+		.top .top-in .top-in-right input:focus {
+			background-color: #fff;
+			border-color: #2188FF;
+			box-shadow: 0 0 0 3px #B3D1F3;
+		}
+		.top .top-in .top-in-right span {
+			margin-left: 20px;
+			margin-right: 10px;
+			font-family: "Microsoft Yahei";
+		}
+		.top .top-in .top-in-right span a{
+			font-size: 18px;
+			text-decoration: none;
+			color: #0366D6;
+		}
+		.top .top-in .top-in-right span a:hover {
+			text-decoration: underline;
+		}
+		/*导航栏 end*/
+
+		/*主体部分 begin*/
+		.main {
+			height: 250px;
+			/* background: -ms-linear-gradient(top, #F5F5F5,#fff);  IE 10
+			background:-moz-linear-gradient(top,#F5F5F5,#fff);火狐  */
+			background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#F5F5F5), to(#fff));/*谷歌*/
+		}
+		/*w是中间版心的宽度*/
+		.w {
+			width: 830px;
+			margin: 0 auto;
+		}
+		.main h1 {
+			font-family: "Microsoft Yahei";
+			font-weight: normal;
+			padding-top: 25px;
+			line-height: 70px;
+		}
+		.main h2 {
+			font-weight: normal;
+			height: 60px;
+		}
+		.main ul {
+			overflow: hidden;
+		}
+		.main li {
+			list-style-type: none;
+			float: left;
+			height: 68px;
+			border: 1px solid #DFE2E5;
+			width: 275px;
+			border-right: 0px solid #DFE2E5;
+			background-color: #FAFBFC;
+		}
+		/*.main li.border {
+			border-right: 1px solid #DFE2E5;
+		}*/
+		.main #main-ul li.on {
+			background-color: #fff;
+		}
+		.main li .arrow {
+			font-family: "iconfont" !important;
+			font-size: 30px;
+			line-height: 68px;
+			float: left;
+			font-style: normal;
+			margin: 0 15px;
+			color: #C6CBD1;
+		}
+		.main li.on .arrow {
+			color: #24292E;
+		}
+		.main li span {
+			float: left;
+			line-height: 25px;
+			margin-top: 10px;
+			font-size: 14px;
+			font-family: "Microsoft Yahei";
+			color: #C6CBD1;
+		}
+		.main li.on span {
+			color: #24292E;
+		}
+		.main li span em {
+			font-style: normal;
+			font-weight: bold;
+			color: #C6CBD1;
+		}
+		.main li.on span em {
+			color: #24292E;
+		}
+		/*主体部分 end*/
+		#reg {
+			height: 500px;
+			/*overflow: hidden;*/
+		}
+		/*第一步的信息输入部分 begin*/
+		#reg dd {
+			display: none;
+		}
+		#reg dd .infor {
+			height: 500px;
+			margin-bottom: 10px;
+			font-family: "Microsoft Yahei";	
+		}
+		#reg dd.on {
+			display: block;
+		}
+		.infor .infor-left {
+			width: 550px;
+			float: left;
+			height: 500px;
+		}
+		.infor .infor-left h3 {
+			height: 40px;
+		}
+		.infor .infor-left h5 {
+			font-weight: normal;
+			font-size: 16px;
+			height: 25px;
+		}
+		.infor .infor-left h5#gender {
+			display: inline-block;
+		}
+		.infor .infor-left input {
+			width: 493px;
+			height: 35px;
+			border: 1px solid #D1D5DA;
+			outline: none;
+			border-radius: 5px;
+			text-indent: 10px;
+			background-color: #FAFAFA;
+			margin-bottom: 20px;
+		}
+		.infor .infor-left input:hover {
+			background-color: #fff;
+			border-color: #2188FF;
+			box-shadow: 0 0 0 3px #B3D1F3;
+		}
+		.infor .infor-left .sex {
+			width: 20px;
+			height: 20px;
+			vertical-align: top;
+		}
+		.infor .infor-left .sex:hover {
+			box-shadow: none;
+		}
+		.infor .infor-left input#btn-first, input#btn-second, input#btn-return {
+			width: 155px;
+			height: 38px;
+			border: 1px solid #258C3E;
+			background-color: #2DB84C;
+			color: white;
+			text-align: center;
+			font-size: 20px;
+			text-indent: 0px;
+			margin-top: 20px;
+		}
+		.infor .infor-left #btn-first:hover, #btn-second:hover, input#btn-return:hover{
+			background-color: #28A846;
+			border: 1px solid #205F32;
+			cursor: pointer;
+			box-shadow: none;
+		}
+		.infor .infor-right {
+			width: 275px;
+			float: right;
+			height: 500px;
+
+		}
+		.infor .infor-right ul {
+			width: 273px;
+			height: 277px;
+			border: 1px solid #CCCCCC;
+			border-radius: 5px;
+			list-style-type: none;
+			background-color: #fff;
+		}
+		.infor .infor-right ul li {
+			border-bottom: 1px solid #DDDDDD;
+		}
+		.infor .infor-right ul h5 {
+			line-height: 58px;
+			font-size: 18px;
+			font-weight: normal;
+			text-indent: 15px;
+		}
+		.infor .infor-right ul p {
+			text-indent: 15px;
+			line-height: 40px;
+		}
+		.infor .infor-right .infor-icon {
+			font-family: "iconfont" !important;
+			font-size: 20px;
+			font-style: normal;
+			color: #24292E;
+		}
+		/*第一步的信息输入部分 end*/
+		.infor .success {
+			font-size: 50px;
+			color: #0366D6;
+			padding-top: 80px;
+			text-align: center;
+		}
+		.infor #btn-back {
+			width: 155px;
+			height: 38px;
+			border: 1px solid #258C3E;
+			background-color: #2DB84C;
+			color: white;
+			text-align: center;
+			font-size: 20px;
+			text-indent: 0px;
+			margin: 50px auto;
+			display: block;
+			text-decoration:none;
+			line-height:38px;
+		}
+		.infor #btn-back:hover {
+			background-color: #28A846;
+			border: 1px solid #205F32;
+			cursor: pointer;
+			box-shadow: none;
+		}
+	</style>
+	<script type="text/javascript">
+		// 兼容多浏览器的事件绑定方式
+		function addEvent(obj, type, handler){
+			if(obj.addEventListener){   //标准浏览器
+				obj.addEventListener(type, handler);
+			}else if(obj.attachEvent){    //IE低版本浏览器
+				obj.attachEvent('on'+type, handler);
+			}else{    //以上皆不是,DOM 0级绑定事件
+				obj['on'+type] = handler;
+			}
+		}
+		// JS 入口函数
+		addEvent(window,"load",function(){
+			var main_ul     = document.getElementById("main-ul");
+			var main_ul_lis = main_ul.getElementsByTagName("li");
+			var btn_first   = document.getElementById("btn-first");
+			var reg         = document.getElementById("reg");
+			var reg_dds     = reg.getElementsByTagName("dd");
+			// 点击第一页的“下一步”
+			addEvent(btn_first,"click",function(){
+				for(var i=0;i<main_ul_lis.length;i++){
+					main_ul_lis[i].className = "";
+				}
+				//this.className = "on";
+				//console.log(this.parentNode);
+				main_ul_lis[1].className="on";
+				for(var i = 0;i<reg_dds.length; i++){
+					reg_dds[i].className = "infor w";
+				}
+				reg_dds[1].className = "infor w on";
+			});
+			// 点击第二页的“下一步”
+			var btn_second  =  document.getElementById("btn-second");
+			addEvent(btn_second,"click",function(){
+				for(var i=0;i<main_ul_lis.length;i++){
+					main_ul_lis[i].className = "";
+				}
+				main_ul_lis[2].className="on";
+				for(var i = 0;i<reg_dds.length; i++){
+					reg_dds[i].className = "infor w";
+				}
+				reg_dds[2].className = "infor w on";
+			});
+			// 点击第二页的“上一步”
+			var btn_return  = document.getElementById("btn-return");
+			addEvent(btn_return,"click",function(){
+				for(var i=0;i<main_ul_lis.length;i++){
+					main_ul_lis[i].className = "";
+				}
+				main_ul_lis[0].className="on";
+				for(var i = 0;i<reg_dds.length; i++){
+					reg_dds[i].className = "infor w";
+				}
+				reg_dds[0].className = "infor w on";
+			});
+		});
+	</script>
+</head>
+<body>
+	<!-- 导航栏 begin -->
+	<div class="top">
+		<div class="top-in">
+			<div class="top-in-left">
+				<a href="#" class="user">&#xe65e;</a>
+				<a href="#">请登录</a>
+				<a href="#">免费注册</a>
+				<a href="#">手机端</a>
+			</div>
+			<div  class="top-in-right">
+				<input type="text" placeholder="搜索"/>
+				<span><a href="#">注 册</a> 或者 <a href="login.html"> 登 录</a></span>
+			</div>
+		</div>
+	</div>
+	<!-- 导航栏 end -->
+	<!-- 主体部分 begin-->
+	<div class="main">
+		<h1 class="w">欢迎加入我们的团队</h1>
+		<h2 class="w">设计,构造,传输软件的最佳方式</h2>
+		<div class="w">
+			<ul id="main-ul">
+				<li class="on">
+					<i class="arrow">&#xe603;</i>
+					<span>
+						<em>第一步：</em><br />
+						设置用户名
+					</span>
+				</li>
+				<li>
+					<i class="arrow">&#xe603;</i>
+					<span>
+						<em>第二步：</em><br />
+						补充账号信息
+					</span>
+				</li>
+				<li style="border-right: 1px solid #DFE2E5">
+					<i class="arrow">&#xe603;</i>
+					<span>
+						<em>第三步：</em><br />
+						注册成功
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+	 <!-- 主体部分 end -->
+	 <dl id="reg">
+	 	<dd class="on">
+	 		<!-- 第一步的信息输入部分 begin-->
+			<div class="infor w on">
+				<div class="infor-left">
+					<form action="post">
+						<label for="username">
+							<h3>创建个人账户</h3>
+							<h5>用户名：</h5>
+						</label>
+						<input type="text" id="username"/>
+						<label for="tel">
+							<h5>手机号：</h5>
+						</label>
+						<input type="text" id="tel"/>
+						<label for="psd"><h5>密码：</h5></label>
+						<input type="password" id="psd"/>
+						<label for="confirm-psd"><h5>确认密码：</h5></label>
+						<input type="password" id="confirm-psd"/>
+						<input type="button" value="下一步" id="btn-first"/>
+					</form>
+				</div>
+				<div class="infor-right">
+					<ul>
+						<li>
+							<h5><i class="infor-icon">&#xe624;</i> 爱上本网站的原因</h5>
+						</li>
+						<li>
+							<p>合作者不限</p>
+							<p>公共存储空间不限</p>
+						</li>
+						<li style="border-bottom:0px solid transparent">
+							<p><i class="infor-icon">&#xe656;</i> 良好的交流</p>
+							<p><i class="infor-icon">&#xe656;</i> 良性共同发展</p>
+							<p><i class="infor-icon">&#xe656;</i> 开放的资源社区</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 第一步的信息输入部分 end -->
+
+	 	</dd>
+ 		<dd>
+ 			<!-- 第二步的信息输入部分 begin -->
+			<div class="infor w">
+				<div class="infor-left">
+					<form action="post">
+						<label for="name">
+							<h3>补充账户信息</h3>
+							<h5>姓名：</h5>
+						</label>
+						<input type="text" id="name"/>
+						<label for="email">
+							<h5>邮箱：</h5>
+						</label>
+						<input type="email" id="email"/><br />
+						<label for="sex"><h5 id="gender">性别：</h5></label>
+						<input type="radio" id="sex" name="sex" class="sex"/>男
+						<input type="radio" name="sex" class="sex"/>女
+						<label for="id-card"><h5>身份证号：</h5></label>
+						<input type="text" id="id-card"/>
+						<input type="button" value="上一步" id="btn-return"/>
+						<input type="button" value="下一步" id="btn-second"/>
+					</form>
+				</div>
+				<div class="infor-right">
+					<ul>
+						<li>
+							<h5><i class="infor-icon">&#xe624;</i> 爱上本网站的原因</h5>
+						</li>
+						<li>
+							<p>合作者不限</p>
+							<p>公共存储空间不限</p>
+						</li>
+						<li style="border-bottom:0px solid transparent">
+							<p><i class="infor-icon">&#xe656;</i> 良好的交流</p>
+							<p><i class="infor-icon">&#xe656;</i> 良性共同发展</p>
+							<p><i class="infor-icon">&#xe656;</i> 开放的资源社区</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<!-- 第二步的信息输入部分 end -->
+
+ 		</dd>
+ 		<dd >
+ 			<!-- 第三步的信息输入部分 begin -->
+			<div class="infor w">
+				<p class="success">
+					恭喜您，注册成功！
+				</p>
+				<a href="index.html" id="btn-back" >返回首页</a>
+
+			</div>
+			<!-- 第三步的信息输入部分 end -->
+
+ 		</dd>	
+	 </dl>
+ 	
+</body>
+</html>

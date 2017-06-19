@@ -1,0 +1,404 @@
+* {
+	margin: 0px;
+	padding: 0px;
+
+}
+body {
+	/*height: 7000px;*/
+	overflow:hidden;
+}
+/*w 是版心的宽度*/
+.w {
+	width: 1140px;
+	margin: 0 auto;
+}
+/*header begin*/
+.header {
+	height: 60px;
+	background-color: #0c800c;
+	text-align: center;
+	line-height: 60px;
+}
+.header a {
+	color: #fff;
+	/*font-weight: bold;*/
+	font-size: 18px;
+	text-decoration: none;
+	transition: all 1s;
+}
+.header a:hover {
+	font-size: 20px;
+	font-weight: bold;
+	color: #d6f00d;
+}
+/*header end*/
+
+/*nav begin*/
+.nav {
+	height: 60px;
+	border-bottom: 1px solid #ecf0f1;
+}
+.nav a {
+	font-size: 20px;
+	text-decoration: none;
+	color: #666;
+	line-height: 60px;
+	float: left;	
+	margin: 0 15px;
+	padding: 0 5px;
+	position: relative;
+	cursor: pointer;
+}
+.nav a:after {
+	content: "";
+	width:0px;
+	height: 4px;
+	position: absolute;
+	left: 50%;
+	bottom: -3px;
+	border-radius: 4px;
+	transition: all 0.5s ease 0.05s;
+	z-index: 3;
+}
+.nav a:hover:after {
+	width: 100%;
+	background-color: #93dc8a;
+	left: 0px;
+}
+.nav-left {
+	float: left;
+}
+.nav-right {
+	float: right;
+	position: relative;
+}
+.nav-right a {
+	padding-right: 40px;
+
+}
+.nav-right a span {
+	display: inline-block;
+	width: 7px;
+	height: 7px;
+	border-right: 2px solid #666;
+	border-bottom: 2px solid #666;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	margin-top: -5px;
+	transform: rotateZ(45deg);
+}
+.nav-right .register {
+	width: 160px;
+	height: 90px;
+	background-color: #fff;
+	border-radius: 5px;
+	position: absolute;
+	right: 15px;
+	top: 53px;
+	border: 1px solid #DBDFE1;
+	box-shadow: 0 0 30px #ccc;
+	z-index: 5;
+	display: none;
+}
+.nav-right .register.on {
+	display: block;
+}
+.nav-right .register.on li:nth-of-type(1) {
+	border-radius: 5px 5px 0px 0px;
+}
+.nav-right .register.on li:nth-of-type(2) {
+	border-radius: 0px 0px 5px 5px;
+}
+.nav-right .register.on li:nth-of-type(1):before {
+	content: "";
+	/* border: 10px solid transparent;
+	border-bottom-color: #fff; */
+	width: 15px;
+	height: 15px;
+	border-left:1px solid #DBDFE1;
+	border-top:1px solid #DBDFE1;
+	background-color: #fff;
+	position: absolute;
+	right: 17px;
+	top: -8px;
+	transform: rotateZ(45deg);
+}
+.nav-right .register.on li {
+	list-style-type: none;
+	width: 100%;
+	height: 45px;
+	font-family: "Microsoft Yahei";
+	font-size: 18px;
+	text-indent: 2em;
+	color: #586667;
+	position: relative;
+	cursor: pointer;
+}
+.nav-right .register.on li:hover {
+	background-color: #0084BA;
+	color: #fff;
+}
+.nav-right .register.on li:nth-of-type(1):hover:before{
+	background-color: #0084BA;
+}
+.nav-right .register.on .register-login {
+	margin: 0px;
+	padding: 0px;
+	line-height: 45px;
+	
+	width: 160px;
+}
+.nav-right .register.on .register-login:hover:after {
+	width: 0px;
+}
+/*nav end*/
+
+/*banner begin*/
+.banner {
+	border-top: 1px solid #ecf0f1;
+}
+.banner-in {
+	height: 500px;
+	background: url(../images/banner3.jpg) no-repeat bottom right ;
+	background-size: cover;
+	position: relative;
+}
+.banner-in:after {
+	content:"";
+	background: url(../images/banner-right.png) no-repeat right top;
+	width: 600px;
+	height: 500px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	animation: move 3s ease 0s;
+}
+.banner-in.out:after {
+	display: none;
+}
+@keyframes move {
+	0% {
+		left: 540px;
+	}
+	100% {
+		left: 1140px;
+	}
+}
+.banner-in .banner-left {
+	width: 700px;
+	height: 500px;
+	background: url(../images/banner-left.png) no-repeat left top;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+.banner-in .banner-left h1 {
+	font-size: 40px;
+	font-weight: bold;
+	font-family: "Microsoft Yahei";
+	padding-top: 20px;
+	color: #586667;
+}
+.banner-in .banner-left h2 {
+	width: 450px;
+	padding-top: 35px;
+	color: #4f5d5d;
+	margin-bottom: 20px;
+}
+.banner-in .banner-left p {
+	width: 500px;
+	font-size: 18px;
+	line-height: 40px;
+	font-family: "Microsoft Yahei";
+	color: #4f5d5d;
+}
+.banner-left button {
+	width: 170px;
+	height: 40px;
+	outline: 0 none;
+	background-color: #fff;
+	border: 2px solid #1d441b;
+	margin: 30px;
+	font-family: "Microsoft Yahei";
+	font-size: 16px;
+	text-align: left;
+	text-indent: 4em;
+	color: #1d441b;
+	position: relative;
+	cursor: pointer;
+	transition: all 2s ease 0s;
+}
+.banner-left button:hover {
+	background-color: #1d441b;
+	color: #fff;
+}
+.banner-left button:before {
+	content:"";
+	width: 0px;
+	height: 0px;
+	border: 10px solid transparent;
+	border-left: 12px solid #1d441b;
+	/*background-color: #D55917;*/
+	position: absolute;
+	left: 31px;
+	top: 9px;
+	transition: all 2s ease 0s;
+}
+.banner-left button:hover:before {
+	border-left-color: #fff;
+}
+/*banner end*/
+/*reason begin*/
+.reason {
+	/*height: 1000px;*/
+	text-align: center;
+	position: relative;
+}
+.reason .back {
+	position: absolute;
+	right: 17px;
+	top: 38px;
+	padding: 10px;
+	text-decoration: none;
+	background-color: #fff;
+	border: 2px solid #1d441b;
+	font-family: "Microsoft Yahei";
+	font-size: 16px;
+	color: #1d441b;
+	cursor: pointer;
+	transition: all 2s ease 0s;
+}
+.reason .back:hover {
+	background-color: #1d441b;
+	color: #fff;
+}
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+.clearfix {
+	zoom: 1;
+}
+.reason h2 {
+	font-size: 30px;
+	padding-top: 10px;
+	height: 80px;
+	font-family:"Microsoft Yahei";
+	font-weight: normal;
+	color: #1f3f50;
+}
+.reason h2 span {
+	font-size: 18px;
+	color: red;
+}
+.reason ul {
+	width: 100%;
+	list-style-type: none;
+}
+.reason ul li {
+	width:227px;
+	float: left;
+	cursor: pointer;
+	position: relative;
+	perspective: 600px;
+	height: 274px;
+}
+.reason ul li:nth-of-type(-n+4) {
+	border-right: 1px solid orangered;
+}
+.reason ul li:nth-of-type(-n+5) {
+	border-bottom: 1px solid orangered;
+}
+.reason ul li:nth-last-of-type(-n+4) {
+	border-left: 1px solid orangered;
+}
+.reason li img {
+	width: 227px;
+	height: 274px;
+	/*vertical-align: top;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;	
+	backface-visibility: hidden;
+	transition: all 1s;
+}
+.reason li .text{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	background-color: #dc8640;
+	width: 187px;
+	height: 234px;
+	transform: rotateY(180deg);
+	transition: all 1s;
+	color: #fff;
+	font-size: 16px;
+	font-family: "Microsoft Yahei";
+	line-height: 30px;
+	text-shadow: 5px 5px 5px skyblue;
+	padding:20px;
+	text-align: left;
+	text-indent: 2em;
+}
+.reason li div.on img {
+	transform: rotateY(180deg);
+}
+.reason li div.on .text{
+	transform: rotateY(360deg);
+}
+
+/*reason end*/
+
+/*钟表的部分 begin */
+.watch {
+	width: 350px;
+	height: 350px;
+	background: url(../images/watchBg.png) no-repeat;
+	background-size: cover;
+	position: relative;
+}
+.watch .return {
+	position: absolute;
+	right: -42px;
+	top: 8px;
+	padding: 10px;
+	text-decoration: none;
+	background-color: #fff;
+	border: 2px solid #1d441b;
+	font-family: "Microsoft Yahei";
+	font-size: 16px;
+	color: #1d441b;
+	cursor: pointer;
+	transition: all 2s ease 0s;
+}
+.watch .return:hover {
+	background-color: #1d441b;
+	color: #fff;
+}
+.watch div {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+.watch .top{
+	background:url(../images/watchHour.png) no-repeat;
+	background-size: cover;
+	z-index: 4;
+}
+.watch .middle{
+	background:url(../images/watchMin.png) no-repeat;
+	background-size: cover;
+	z-index: 3;
+}
+.watch .bottom{
+	background:url(../images/watchSec.png) no-repeat;
+	background-size: cover;
+	z-index: 2;
+}
+/*钟表的部分 end */

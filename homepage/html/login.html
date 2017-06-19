@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>login</title>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		body {
+			background-color: #F9F9F9;
+		}
+		@font-face {
+		  font-family: 'iconfont';
+		  src:url('../css/font/iconfont.ttf');
+		}
+		.user{
+		  font-family:"iconfont" !important;
+		  font-size:100px;
+		  font-style:normal;
+		}
+		.top {
+			/*height: 48px;*/
+			/*background: url(../images/head.gif) no-repeat center;*/
+			padding: 30px 0 0;
+			text-align: center;
+		}
+		.welcome {
+			height: 38px;
+			text-align: center;
+			font-weight: normal;
+			font-family: "宋体";
+			margin: 10px 0;
+		}
+		.login {
+			height:190px;
+			background-color: #fff;
+			width: 270px;
+			margin: 0 auto;
+			border: 1px solid #D8DEE2;
+			border-radius: 10px;
+			padding:25px 25px;
+		}
+		.login p {
+			font-family: "Microsoft Yahei";
+			margin-bottom: 7px;
+			font-size: 14px;
+		}
+		.login input {
+			width: 264px;
+			height: 30px;
+			border: 1px solid #D1D5DA;
+			border-radius: 5px;
+			margin-bottom: 18px;
+			outline: none;
+			text-indent: 7px;
+			box-shadow: inset 0 1px 2px rgba(27,31,35,0.075);
+
+		}
+		.login input:focus {
+			border-color:#2188FF;
+			box-shadow: 0 0 0 3px #B3D1F3;
+		}
+		.login p a {
+			float: right;
+			text-decoration: none;
+			color: #0366D6;
+		}
+		.login #btn-login {
+			border: 1px solid #258C3E;
+			background-color: #2DB84C;
+			color: white;
+			height: 35px;
+			font-weight: bold;
+			font-size: 16px;
+		}
+		.login #btn-login:hover {
+			background-color: #28A846;
+			border: 1px solid #205F32;
+			cursor: pointer;
+		}
+		.creat {
+			width: 320px;
+			height: 20px;
+			margin: 0 auto;
+			border: 1px solid #D8DEE2;
+			border-radius: 10px;
+			margin-top: 15px;
+			text-align: center;
+			padding: 15px 0;
+			font-size: 14px;
+			font-family: "Microsoft Yahei";
+		}
+		.creat a {
+			text-decoration: none;
+			color: #0378DF;
+		}
+		.creat a:hover {
+			text-decoration: underline;
+		}
+		.bottom {
+			margin-top: 80px;
+			text-align: center;
+			font-size: 14px;
+		}
+		.bottom a {
+			color: #9B9B9D;
+			text-decoration: none;
+			padding-right: 10px;
+		}
+		.bottom a:hover {
+			text-decoration: underline;
+		}
+	</style>
+</head>
+<body>
+	<div class="top user">&#xe65e;</div>
+	<div class="welcome">
+		<h2>欢迎登录我们的网站</h2>
+	</div>
+	<div class="login">
+		<form action="post">
+			<p><label for="username">用户名或者邮箱:</label></p>
+			<input type="text" id="username" />
+			<p><label for="psd">密码:</label><a href="#">忘记密码？</a></p>
+			<input type="password" id="psd" />
+			<input type="button" value="登 录" id="btn-login" />
+		</form>
+	</div>
+	<div class="creat">
+		<span>新的GitHub？<a href="register.html"> 创建新的账号</a></span>
+	</div>
+	<p class="bottom">
+		<a href="#">项目组</a>
+		<a href="#">隐私</a>
+		<a href="#">安全</a>
+		<a href="#">联系GitHub</a>
+	</p>
+
+</body>
+</html>
