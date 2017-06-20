@@ -2,7 +2,7 @@
  * Created by liuyang on 2017/6/18.
  */
 // 直接运行
-(function(){
+window.onload= function(){
     $(document).ready(function() {
         $('#summernote').summernote({
             lang:"zh-CN",
@@ -28,8 +28,10 @@
             },
             success:function(){
                 alert("成功啦");
+                window.location.href = "../view/view.html";
             }
         });
+
     });
-})();
-/*window.onload= function(){};*/
+}
+
